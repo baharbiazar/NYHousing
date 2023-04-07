@@ -21,7 +21,7 @@ import catboost as cb
 
 
 
-'''
+
 st.set_page_config(page_title = "my app" , page_icon = ":tada:", layout="wide")
 
 #-----Header Section-------
@@ -41,7 +41,7 @@ with st.container():
 # Sidebar
 # Header of Specify Input Parameters
 st.sidebar.header('Specify Input Parameters') 
-'''
+
 
 def user_input_features():
     bedrooms = st.sidebar.slider('bedrooms',float(0), float(20), float(3))
@@ -82,7 +82,7 @@ st.write(df)
 st.write('---')
 
 #model
-filename = "C:\Users\Owner\OneDrive\Desktop\Housing Project\finalized_model.sav"
+filename = ".\finalized_model.sav"
 loaded_model = pickle.load(open(filename, 'rb'))
 prediction = loaded_model.predict(df)
 
