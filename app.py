@@ -1,23 +1,16 @@
 import streamlit as st
 import pandas as pd 
 import pickle
-import sklearn
+#import sklearn
 
 import pandas as pd
-import seaborn as sn
-import numpy as np
-import matplotlib.pyplot as plt
+#import seaborn as sn
+#import numpy as np
+#import matplotlib.pyplot as plt
 
 #from pandasql import sqldf
 
-from scipy import stats
 
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_squared_error, r2_score
-from sklearn.model_selection import KFold
-from sklearn.model_selection import cross_val_score
-
-import catboost as cb
 
 
 
@@ -27,16 +20,15 @@ st.set_page_config(page_title = "my app" , page_icon = ":tada:", layout="wide")
 #-----Header Section-------
 with st.container():
     st.subheader("Hi, I am Bahar :wave:")
-    st.title("testing this app")
-    st.write("here to deploy a housing price prediction app built with NYC Zillow data")
+    st.title("New York Housing Price Prediction App")
+    st.write("Here to deploy a housing price prediction app built on NYC Zillow data")
     st.write("[checkout my github>](https://github.com/baharbiazar)")
 
 #-------  What I do --------
 with st.container():
     st.write("---")
 
-#sidebar 
-#header of specify input parameters
+
 
 # Sidebar
 # Header of Specify Input Parameters
@@ -77,20 +69,22 @@ df = user_input_features()
 
 
 # Print specified input parameters
-st.header('Specified Input parameters')
+st.header('Specified Input Parameters')
 st.write(df)
 st.write('---')
 
+
 #model
-filename = ".\finalized_model.sav"
+filename = r"C:\Users\Owner\OneDrive\Desktop\Housing Project\finalized_model.sav"
 loaded_model = pickle.load(open(filename, 'rb'))
 prediction = loaded_model.predict(df)
 
 print(prediction)
 
-st.header('Prediction of Housing Price')
+st.header('Price Prediction')
 st.write(prediction)
 st.write('---')
+
 
 
 
