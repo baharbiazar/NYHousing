@@ -3,5 +3,7 @@
 # NYC Housing Price Prediction with Regression Models 
 
 ## Data
+## Models
+## Performance
 ## Takeaways
 ## Next Steps
