@@ -87,10 +87,10 @@ st.write('---')
 
 # bigger table
 df = pd.DataFrame(
-   prediction,
-   columns=('perdiction'))
+                  prediction,
+                  columns=['perdiction'])
 
-st.dataframe(df)  # Same as st.write(df)
+st.write(df)  # Same as st.write(df)
 
 
 
