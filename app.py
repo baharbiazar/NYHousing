@@ -85,6 +85,12 @@ st.header('Price Prediction')
 st.write(prediction)
 st.write('---')
 
+# bigger table
+df = pd.DataFrame(
+   prediction,
+   columns=('perdiction'))
+
+st.dataframe(df)  # Same as st.write(df)
 
 
 
