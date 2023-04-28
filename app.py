@@ -82,15 +82,14 @@ prediction = loaded_model.predict(df)
 print(prediction)
 
 st.header('Price Prediction')
-st.write(prediction)
-st.write('---')
+##st.write(prediction)
 
 # bigger table
 df = pd.DataFrame(
                   prediction,
                   columns=['perdiction'])
 
-st.write(df)  # Same as st.write(df)
+st.write(df)  # Same as st.dataframe(df)
 
-
+st.write('---')
 
