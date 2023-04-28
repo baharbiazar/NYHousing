@@ -75,7 +75,7 @@ st.write('---')
 
 
 #model
-filename = r"C:\Users\Owner\OneDrive\Desktop\Housing Project\finalized_model.sav"
+filename = "finalized_model.sav"
 loaded_model = pickle.load(open(filename, 'rb'))
 prediction = loaded_model.predict(df)
 
