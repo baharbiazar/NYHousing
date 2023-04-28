@@ -21,7 +21,7 @@ st.set_page_config(page_title = "my app" , page_icon = ":tada:", layout="wide")
 with st.container():
     st.subheader("Hi, I am Bahar :wave:")
     st.title("New York Housing Price Prediction App")
-    st.write("Here to deploy a housing price prediction app built on NYC Zillow data")
+    st.write("Here is a housing price prediction app built on NYC Zillow data")
     st.write("[checkout my github>](https://github.com/baharbiazar)")
 
 #-------  What I do --------
