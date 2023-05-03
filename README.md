@@ -2,7 +2,7 @@
 
 # NYC Housing Price Prediction & Streamlit App 
 The goal of this project was to try regression models in predicting housing prices and to deploy the final model so everyone can have access to it. 
-[https://baharbiazar-nyhousing-app-3l9e70.streamlit.app/]
+[Click to access App](https://baharbiazar-nyhousing-app-3l9e70.streamlit.app/)
 ## Data
 
 ## Models
