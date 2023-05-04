@@ -36,8 +36,8 @@ st.sidebar.header('Specify Input Parameters')
 
 
 def user_input_features():
-    bedrooms = st.sidebar.slider('bedrooms',float(0), float(20), float(3))
-    bathrooms = st.sidebar.slider('bathrooms', float(0), float(20), float(2))
+    bedrooms = st.sidebar.slider('bedrooms',int(0), int(20), int(3))
+    bathrooms = st.sidebar.slider('bathrooms', int(0), int(20), int(2))
     yearBuilt = st.sidebar.slider('yearBuilt', float(1800), float(2023), float(1980))
     property_tax = st.sidebar.slider('propTax', float(0.5), float(1), float(0.8))
     living_area = st.sidebar.slider('livingArea', float(100), float(8000), float(2500))
