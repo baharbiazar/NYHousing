@@ -16,7 +16,8 @@ Heads up: This model is based on 2021 and current year predictions require retra
 ## Performance
 
 ## App
-Please look at app.py for more information or go to Streamlit link to see some predictions.
+Please look at app.py for more information or go to Streamlit link to see some predictions.  
+[Click to access Streamlit App](https://baharbiazar-nyhousing-app-3l9e70.streamlit.app/) 
 ## Takeaways
 - Knowing the data and preparing the right features are keystone, yet the most time consuming part of of any ML model. 
 - Be aware of outliers! Look at what's available and what outliers to take out. Some need domain knowladge and some are detecable simply by looking at the distribution graphs. If you don't see many data points around a certain value it might impact your predictios drastcally. It's better to take those outliers out.
