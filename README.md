@@ -6,7 +6,7 @@ The goal of this project is to use regression models in predicting housing price
 ## Data
 Data is from [Kaggle](https://www.kaggle.com/datasets/ericpierce/new-york-housing-zillow-api), which was originally collected on 1/20/21 and consists of 75,629 housing listings on Zillow.com using Zillow's API. Each listing has 1507 attributes that makes data processing and feature selection very time consuming.
 Final columns used in the model are: 
-
+  Heads up: This 
 ## Models
 ## Performance
 ## App
