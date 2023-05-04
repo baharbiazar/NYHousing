@@ -14,6 +14,6 @@ Heads up: This model is based on 2021 and current year predictions require retra
 Please look at app.py for more information or go to Streamlit link to see some predictions.
 ## Takeaways
 - Knowing the data and preparing the right features are keystone, yet the most time consuming part of of any ML model. 
-- Be aware of outliers! Look at what's available and what outliers to take out. Some need domain knowladge and some are some are detecable by simpl looking at the distribution graphs. If you don't see many data points around a certain value it might impact your predictios drastcally. It's better to take those outliers out.
+- Be aware of outliers! Look at what's available and what outliers to take out. Some need domain knowladge and some are detecable simply by looking at the distribution graphs. If you don't see many data points around a certain value it might impact your predictios drastcally. It's better to take those outliers out.
 - Make sure to know what you will be predicting for. 
 ## Next Steps
