@@ -2,7 +2,7 @@
 
 # NYC Housing Price Prediction & Streamlit App 
 The goal of this project is to use regression models in predicting housing prices and to deploy the final model so everyone can have access to it.  
-[Click to access App](https://baharbiazar-nyhousing-app-3l9e70.streamlit.app/)  
+[Click to access Streamlit App](https://baharbiazar-nyhousing-app-3l9e70.streamlit.app/)  
 While personally looking for housing, I tried to outline the most important features in determining the price of a property and investigate if there are any other attributes that drive the housing market other than the common knowledge. 
 ## Data and EDA
 Data is from [Kaggle](https://www.kaggle.com/datasets/ericpierce/new-york-housing-zillow-api), which was originally collected on 1/20/21 and consists of 75,629 housing listings on Zillow.com using Zillow's API. Each listing has 1507 attributes that makes data processing and feature selection very time consuming.
