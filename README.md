@@ -22,6 +22,6 @@ Please look at app.py for more information or go to Streamlit link to see some p
 - Be aware of outliers! Look at what's available and what outliers to take out. Some need domain knowladge and some are detecable simply by looking at the distribution graphs. If you don't see many data points around a certain value it might impact your predictios drastcally. It's better to take those outliers out.
 - Make sure to know what you will be predicting for. 
 ## Next Steps
-1- Add more features to the training set
+1- Add more features to the training set  
 2- Expand the model to predict current day prices.  
 In reality, many factors are involved in this matter and there is a big difference between how much a house is worth and how much it's sold in the market. As I explore more I'll update this repository with my findings.
