@@ -66,12 +66,12 @@ def user_input_features():
     features = pd.DataFrame(data, index=[0])
     return features
 
-df = user_input_features()
-
+user_df = user_input_features()
+print(df)
 
 # Print specified input parameters
 st.header('Specified Input Parameters')
-st.write(df)
+st.write(user_df)
 st.write('---')
 
 
@@ -80,17 +80,16 @@ filename = "finalized_model.sav"
 loaded_model = pickle.load(open(filename, 'rb'))
 prediction = loaded_model.predict(df)
 
-print(prediction)
 
 st.header('Price Prediction')
 ##st.write(prediction)
 
 # bigger table
-df = pd.DataFrame(
+pred = pd.DataFrame(
                   prediction,
                   columns=['perdiction'])
 
-st.write(df)  # Same as st.dataframe(df)
+st.write(pred)  # Same as st.dataframe(df)
 
 st.write('---')
 
@@ -109,10 +108,10 @@ train = pd.read_csv('X_train.csv')
 
 # compute SHAP values
 explainer = shap.Explainer(loaded_model, train)
-shap_values = explainer(train)
+shap_values = explainer(user_df)
+
 
 st_shap(shap.plots.waterfall(shap_values[0]), height=300)
 st_shap(shap.plots.beeswarm(shap_values), height=300)
 
-explainer = shap.TreeExplainer(loaded_model)
-shap_values = explainer.shap_values(train)
+
