@@ -109,7 +109,7 @@ def st_shap(plot, height=None):
 
 
 explainer = shap.Explainer(loaded_model, train)
-shap_values = explainer.shap_values(df)
+shap_values = explainer(df)
 
 # visualize the first prediction's explanation (use matplotlib=True to avoid Javascript)
 st_shap(shap.force_plot(explainer.expected_value, shap_values[0,:], df.iloc[0,:]))
