@@ -16,6 +16,14 @@ The best Model with the lowest was CatBoost with RMSE: 92593.91 and R2: 0.84.
 
 ![pred](https://user-images.githubusercontent.com/70281148/236565968-bcb5a7e7-cbc5-43d6-a4a4-ec10418fe4ed.png)
 
+## Shap Values and Feature Importance
+
+![shap](https://user-images.githubusercontent.com/70281148/236566746-0abd4f03-0a57-4968-b837-7f8c017276f6.png)  
+
+
+![ft](https://user-images.githubusercontent.com/70281148/236566744-80e41452-23c2-460d-898e-f94b4ef90d55.png)
+
+
 
 ## App
 Please look at app.py for more information or go to Streamlit link to see some predictions.  
