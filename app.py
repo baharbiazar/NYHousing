@@ -67,7 +67,6 @@ def user_input_features():
     return features
 
 user_df = user_input_features()
-print(df)
 
 # Print specified input parameters
 st.header('Specified Input Parameters')
@@ -78,7 +77,7 @@ st.write('---')
 #model
 filename = "finalized_model.sav"
 loaded_model = pickle.load(open(filename, 'rb'))
-prediction = loaded_model.predict(df)
+prediction = loaded_model.predict(user_df)
 
 
 st.header('Price Prediction')
