@@ -113,6 +113,8 @@ print(shap_values)
 
 st.write(shap_values[0][-1])
 
+# Plot the SHAP values
+st_shap(shap.force_plot(explainer.expected_value[1], shap_values[1][0], user_df.columns.tolist(), matplotlib=True))
 
 
 
