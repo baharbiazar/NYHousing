@@ -95,13 +95,24 @@ st.write(df)  # Same as st.dataframe(df)
 st.write('---')
 
 # SHAP values 
-st.subheader('SHAP Values')
-train = pd.read_csv('X_train.csv')
-explainer = shap.TreeExplainer(loaded_model, train)
-shap_values = explainer.shap_values(df)
 
 import streamlit.components.v1 as components
 from streamlit_shap import st_shap
+
+st.subheader('SHAP Values')
+train = pd.read_csv('X_train.csv')
+
+shap.initjs()
+explainer = shap.Explainer(loaded_model, train) 
+shap_values = explainer(df) 
+fig = shap.plots.bar(shap_values[0]) 
+st.pyplot(fig) 
+
+
+explainer = shap.TreeExplainer(loaded_model, train)
+shap_values = explainer.shap_values(df)
+
+
 
 
 st_shap(shap.plots.waterfall(shap_values[0]), height=300)
