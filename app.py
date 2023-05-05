@@ -120,7 +120,10 @@ st.write('Summary plot of SHAP values')
 shap.summary_plot(shap_values, user_df)
 
 # Create the summary plot object
+
+
 fig_summary = shap.summary_plot(shap_values, user_df)
 
 # Display the plot in Streamlit
+st.set_option('deprecation.showPyplotGlobalUse', False)
 st.pyplot(fig_summary)
