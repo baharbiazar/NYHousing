@@ -108,7 +108,9 @@ def st_shap(plot, height=None):
     components.html(shap_html, height=height)
 
 
-explainer = shap.Explainer(loaded_model, train)
-shap_values = explainer(df)
+# Create object that can calculate shap values
+explainer = shap.TreeExplainer(loaded_model)
+# Calculate Shap values
+shap_values = explainer.shap_values(train)
 
 st_shap(shap.plots.waterfall(shap_values[0]), height=300)
