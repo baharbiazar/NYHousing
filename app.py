@@ -10,6 +10,8 @@ import pandas as pd
 #import matplotlib.pyplot as plt
 
 #from pandasql import sqldf
+from streamlit_shap import st_shap
+#import streamlit.components.v1 as components
 
 
 
@@ -93,12 +95,9 @@ st.write(pred)  # Same as st.dataframe(df)
 st.write('---')
 
 # SHAP values 
-from streamlit_shap import st_shap
-#import streamlit.components.v1 as components
 
 
 st.subheader('SHAP Values')
-train = pd.read_csv('X_train.csv')
 
 
 #def st_shap(plot, height=None):
@@ -109,12 +108,15 @@ train = pd.read_csv('X_train.csv')
 explainer = shap.Explainer(loaded_model)
 shap_values = explainer.shap_values(user_df)
 
-print(shap_values)
+#print(shap_values)
 
-st.write(shap_values[0][-1])
+#st.write(shap_values[0][-1])
 
 # Plot the SHAP values
 st_shap(shap.force_plot(explainer.expected_value, shap_values, user_df.columns.tolist(), matplotlib=True))
 
+shap.summary_plot(shap_values, user_df, plot_type="bar")
+st.write('Summary plot of SHAP values')
+shap.summary_plot(shap_values, user_df)
 
 
