@@ -97,7 +97,7 @@ st.write('---')
 # SHAP values 
 
 import streamlit.components.v1 as components
-from streamlit_shap import st_shap
+
 
 st.subheader('SHAP Values')
 train = pd.read_csv('X_train.csv')
