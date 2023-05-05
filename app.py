@@ -113,7 +113,7 @@ shap_values = explainer.shap_values(user_df)
 #st.write(shap_values[0][-1])
 
 # Plot the SHAP values
-st_shap(shap.force_plot(explainer.expected_value, shap_values, user_df.columns.tolist(), matplotlib=True))
+st_shap(shap.force_plot(explainer.expected_value, shap_values, user_df.columns.tolist(), matplotlib=True,  plot_size=(15, 5)))
 
 shap.summary_plot(shap_values, user_df, plot_type="bar")
 st.write('Summary plot of SHAP values')
