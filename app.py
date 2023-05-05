@@ -106,9 +106,8 @@ train = pd.read_csv('X_train.csv')
     #components.html(shap_html, height=height)
 
 # compute SHAP values
-explainer = shap.Explainer(loaded_model, train)
-shap_values = explainer(user_df)
-
+explainer = shap.TreeExplainer(loaded_model)
+shap_values = explainer.shap_values(train)
 
 st_shap(shap.plots.waterfall(shap_values[0]), height=300)
 st_shap(shap.plots.beeswarm(shap_values), height=300)
