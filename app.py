@@ -95,17 +95,24 @@ st.write(df)  # Same as st.dataframe(df)
 st.write('---')
 
 # SHAP values 
-
-import streamlit.components.v1 as components
+from streamlit_shap import st_shap
+#import streamlit.components.v1 as components
 
 
 st.subheader('SHAP Values')
 train = pd.read_csv('X_train.csv')
 
 
-def st_shap(plot, height=None):
-    shap_html = f"<head>{shap.getjs()}</head><body>{plot.html()}</body>"
-    components.html(shap_html, height=height)
+#def st_shap(plot, height=None):
+    #shap_html = f"<head>{shap.getjs()}</head><body>{plot.html()}</body>"
+    #components.html(shap_html, height=height)
+
+
+explainer = shap.Explainer(loaded_model, train)
+shap_values = explainer(train)
+
+st_shap(shap.plots.waterfall(shap_values[0]), height=300)
+st_shap(shap.plots.beeswarm(shap_values), height=300)
 
 
 # Create object that can calculate shap values
