@@ -102,12 +102,5 @@ shap_values = explainer.shap_values(df)
 import streamlit.components.v1 as components
 from streamlit_shap import st_shap
 
-def st_shap(plot, height=None):
-    shap_html = f"<head>{shap.getjs()}</head><body>{plot.html()}</body>"
-    components.html(shap_html, height=height)
-
-# visualize the first prediction's explanation (use matplotlib=True to avoid Javascript)
-st_shap(shap.force_plot(explainer.expected_value, shap_values, df))
-
 
 st_shap(shap.plots.waterfall(shap_values[0]), height=300)
