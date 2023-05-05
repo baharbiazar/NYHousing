@@ -13,7 +13,9 @@ Heads up: This model is based on 2021 and current year predictions require retra
 
 ## Models
 
-## Performance
+## Evaluation
+![pred](https://user-images.githubusercontent.com/70281148/236564342-86e92752-1539-49f5-8bd6-cfb881c5e336.png)
+
 
 ## App
 Please look at app.py for more information or go to Streamlit link to see some predictions.  
