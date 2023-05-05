@@ -7,7 +7,7 @@ import shap
 import pandas as pd
 #import seaborn as sn
 #import numpy as np
-#import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 #from pandasql import sqldf
 from streamlit_shap import st_shap
@@ -113,7 +113,10 @@ shap_values = explainer.shap_values(user_df)
 #st.write(shap_values[0][-1])
 
 # Plot the SHAP values
-st_shap(shap.force_plot(explainer.expected_value, shap_values, user_df.columns.tolist(), matplotlib=True,  plot_size=(15, 5)))
+fig = shap.force_plot(explainer.expected_value, shap_values, user_df.columns.tolist(), matplotlib=True)
+fig.set_figheight(5)
+fig.set_figwidth(15)
+st.pyplot(fig)
 
 shap.summary_plot(shap_values, user_df, plot_type="bar")
 st.write('Summary plot of SHAP values')
