@@ -102,17 +102,16 @@ import streamlit.components.v1 as components
 st.subheader('SHAP Values')
 train = pd.read_csv('X_train.csv')
 
-shap.initjs()
-explainer = shap.Explainer(loaded_model, train) 
-shap_values = explainer(df) 
-fig = shap.plots.bar(shap_values[0]) 
-st.pyplot(fig) 
+
+def st_shap(plot, height=None):
+    shap_html = f"<head>{shap.getjs()}</head><body>{plot.html()}</body>"
+    components.html(shap_html, height=height)
 
 
 explainer = shap.TreeExplainer(loaded_model, train)
 shap_values = explainer.shap_values(df)
 
-
-
+# visualize the first prediction's explanation (use matplotlib=True to avoid Javascript)
+st_shap(shap.force_plot(explainer.expected_value, shap_values[0,:], df.iloc[0,:]))
 
 st_shap(shap.plots.waterfall(shap_values[0]), height=300)
