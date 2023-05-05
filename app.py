@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd 
 import pickle
+import shap
 #import sklearn
 
 import pandas as pd
@@ -92,4 +93,18 @@ df = pd.DataFrame(
 st.write(df)  # Same as st.dataframe(df)
 
 st.write('---')
+
+# SHAP values 
+st.subheader('SHAP Values')
+explainer = shap.TreeExplainer(loaded_model)
+shap_values = explainer.shap_values(df)
+
+import streamlit.components.v1 as components
+
+def st_shap(plot, height=None):
+    shap_html = f"<head>{shap.getjs()}</head><body>{plot.html()}</body>"
+    components.html(shap_html, height=height)
+
+# visualize the first prediction's explanation (use matplotlib=True to avoid Javascript)
+st_shap(shap.force_plot(explainer.expected_value, shap_values, df))
 
