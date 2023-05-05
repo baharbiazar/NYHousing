@@ -108,7 +108,7 @@ def st_shap(plot, height=None):
     components.html(shap_html, height=height)
 
 
-explainer = shap.TreeExplainer(loaded_model, train)
+explainer = shap.Explainer(loaded_model, train)
 shap_values = explainer.shap_values(df)
 
 # visualize the first prediction's explanation (use matplotlib=True to avoid Javascript)
