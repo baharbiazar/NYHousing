@@ -96,7 +96,8 @@ st.write('---')
 
 # SHAP values 
 st.subheader('SHAP Values')
-explainer = shap.TreeExplainer(loaded_model)
+train = pd.read_csv('X_train.csv')
+explainer = shap.TreeExplainer(loaded_model, train)
 shap_values = explainer.shap_values(df)
 
 import streamlit.components.v1 as components
