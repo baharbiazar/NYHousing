@@ -115,15 +115,16 @@ shap_values = explainer.shap_values(user_df)
 # Plot the SHAP values
 st_shap(shap.force_plot(explainer.expected_value, shap_values, user_df.columns.tolist(), matplotlib=True))
 
-shap.summary_plot(shap_values, user_df, plot_type="bar")
-st.subheader('Summary plot of SHAP values')
+#shap.summary_plot(shap_values, user_df, plot_type="bar")
+
+st.subheader('Summary plot of SHAP valuesss')
 #shap.summary_plot(shap_values, user_df)
 
 # Create the summary plot object
 
 
-fig_summary = shap.summary_plot(shap_values, user_df,  plot_size=(15, 5))
+#fig_summary = shap.summary_plot(shap_values, user_df,  plot_size=(15, 5))
 
 # Display the plot in Streamlit
-st.set_option('deprecation.showPyplotGlobalUse', False)
-st.pyplot(fig_summary)
+#st.set_option('deprecation.showPyplotGlobalUse', False)
+#st.pyplot(fig_summary)
