@@ -46,7 +46,7 @@ def user_input_features():
     living_area = st.sidebar.slider('livingArea', int(400), int(6500), int(2500))
     lot_size_sqft = st.sidebar.slider('lot_size_sqf', int(400), int(10000), int(5000))
     school_rank = st.sidebar.slider('schlRnk', int(1), int(10), int(5))
-    hoa = st.sidebar.slider('hoa', float(0), float(1500), float(300))
+    hoa = st.sidebar.slider('hoa', float(1), float(1500), float(300))
     has_fireplace = st.sidebar.slider('hasFireplace', int(0), int(1), int(1))
     garage_spaces = st.sidebar.slider('garageSpaces', int(0), int(10), int(2))
     has_basement = st.sidebar.slider('basement', int(0), int(1), int(1))
