@@ -117,13 +117,13 @@ st_shap(shap.force_plot(explainer.expected_value, shap_values, user_df.columns.t
 
 #shap.summary_plot(shap_values, user_df, plot_type="bar")
 
-st.subheader('Summary plot of SHAP valuesss')
+st.subheader('Summary plot of SHAP values')
 #shap.summary_plot(shap_values, user_df)
 
 # Create the summary plot object
 
 
-fig_summary = shap.summary_plot(shap_values, user_df)
+fig_summary = shap.summary_plot(shap_values, user_df,  plot_size=(15, 5))
 
 # Display the plot in Streamlit
 #st.set_option('deprecation.showPyplotGlobalUse', False)
